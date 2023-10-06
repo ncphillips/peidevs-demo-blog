@@ -1,9 +1,8 @@
 <h1>Posts</h1>
 <div>
-  <%= link_to "New Post", new_post_path %>
+  <%= render @posts %>
 </div>
+<hr>
 <div>
-  <% @posts.each do |post| %>
-    <div><%= post.title %></div>
-  <% end %>
+  <%= link_to "New Post", new_post_path %>
 </div>
