@@ -3,6 +3,6 @@
   <%= render @posts %>
 </div>
 <hr>
-<div>
+<%= turbo_frame_tag :new_post, src: new_post_path do %>
   <%= link_to "New Post", new_post_path %>
-</div>
+<% end %>

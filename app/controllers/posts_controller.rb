@@ -16,7 +16,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to posts_path }
+        format.turbo_stream { redirect_to new_post_path }
+      end
     else
       render :new
     end
